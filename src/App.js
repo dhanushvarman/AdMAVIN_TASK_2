@@ -1,24 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import { createContext } from 'react';
+import { arts } from './Data';
+import NestedList from './NestedList';
+import DataProvider from './DataContext';
+import Topbar from './Topbar';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DataProvider>
+      <Topbar/>
+      <NestedList/>
+    </DataProvider>
   );
 }
 
